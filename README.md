@@ -80,6 +80,6 @@ custom-btn:hover {
 }
 </style>
 
-<a href="https://mmljc.github.io/vip/jy.html" class="button">访问网站</a>
+<a href="https://tom.163.com" class="button">访问网站</a>
 
 <a href="https://mmljc.github.io/vip/jy.html" class="custom-btn">下载游戏</a>
