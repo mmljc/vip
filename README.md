@@ -60,4 +60,4 @@
 }
 </style>
 
-<a href="https://mmljc.github.io/mmljc/jy.html" class="button">访问网站</a>
+<a href="https://mmljc.github.io/vip/jy.html" class="button">访问网站</a>
