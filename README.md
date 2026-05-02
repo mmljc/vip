@@ -8,7 +8,7 @@
 - [鸣谢声明](#鸣谢声明)
 - [访问网站](#访问网站)
 
-<a href="https://mmljc.github.io/vip/daohang.md" class="button">点我前往网址导航</a>
+<a href="https://mmljc.github.io/vip/daohang.html" class="button">点我前往网址导航</a>
 
 ---
 <a id="公告"></a>
