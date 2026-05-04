@@ -130,32 +130,42 @@
 
         <!-- 密码1 对应界面 -->
         <div class="download-wrap1" id="box1">
-            <h2>密码1正确 · 普通资源区</h2>
-            <p>使用说明</p>
-            <p>1. 本资源仅供学习使用</p>
-            <p>2. 下载后请妥善保存</p>
-            <a href="https://mmljc.github.io/vip/runme.bat" class="download-btn">下载普通文件</a>
-            <br>
+            <h2>恭喜你，密码正确</h2>
+            <P>使用说明</P>
+                
+<p>用户在使用本网站的服务时，必须遵守以下规则</P>
+    
+<P>1.用户使用本网站的服务，一切的行为后果均为用户自负，本网站只提供文件服务，不承认担任何责任！</P>
+    
+<P>2.下载的文件必须要在没有网络后才能运行，否则无法达到破网的效果！</P>
+
+<P>3.文件必须在有网络的情况下下载，否则无法使用</P>
+    
+<P>4.下载的文件可以在下载文件夹中找到</P>
+            <p>点击下载按钮下载文件</p>
+            <a href="https://mmljc.github.io/vip/runme.bat" class="download-btn">下载文件</a>
+            <!-- 手动重置返回密码页按钮 -->
             <button class="reset-btn" onclick="resetPage()">返回密码页</button>
+            <a href="https://mmljc.github.io/vip/daohang.html"
+   class="btn"
+   role="button"
+   tabindex="0"
+   aria-label="前往导航页">点我前往导航页</a>
         </div>
 
         <!-- 密码2 对应界面 -->
         <div class="download-wrap2" id="box2">
-            <h2>密码2正确 · 高级资源区</h2>
-            <p>专属高级用户界面</p>
-            <p>1. 高级文件仅限内部使用</p>
-            <p>2. 禁止二次传播</p>
-            <a href="https://mmljc.github.io/vip/daohang.html" class="download-btn">下载高级文件</a>
+            <h2>测试页面</h2>
             <br>
+            <a href="https://mmljc.github.io/vip/qq.jpg" class="download-btn">加入群聊</a>
             <button class="reset-btn" onclick="resetPage()">返回密码页</button>
         </div>
 
         <!-- 密码3 对应界面 -->
         <div class="download-wrap3" id="box3">
-            <h2>密码3正确 · 管理员后台</h2>
-            <p>管理员专属入口</p>
-            <p>仅限管理员登录使用</p>
-            <a href="https://www.baidu.com" class="download-btn">进入管理员后台</a>
+            <h2>百度</h2>
+            
+            <a href="https://www.baidu.com" class="download-btn">进入百度</a>
             <br>
             <button class="reset-btn" onclick="resetPage()">返回密码页</button>
         </div>
@@ -165,9 +175,9 @@
         // ========== 在这里设置 密码对应界面 ==========
         // 格式：密码: 对应界面ID
         const pwdList = {
-            "123456": "box1",   // 密码123456 → 界面1
-            "666888": "box2",   // 密码666888 → 界面2
-            "6604050873": "box3"// 原密码 → 界面3
+            "6604050873": "box1",   // 密码123456 → 界面1
+            "3780504066": "box2",   // 密码666888 → 界面2
+            "baidu": "box3"// 原密码 → 界面3
         };
 
         // 校验密码
