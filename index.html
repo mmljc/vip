@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘文件下载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        /* 放大白色盒子 */
+        .box {
+            width: 95%;
+            max-width: 600px;
+            padding: 60px 50px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            color: #333;
+            font-size: 24px;
+        }
+        .input-item {
+            margin-bottom: 25px;
+        }
+        input {
+            width: 100%;
+            height: 55px;
+            padding: 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 17px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #409eff;
+        }
+        .btn {
+            width: 100%;
+            height: 55px;
+            background: #409eff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top:10px;
+        }
+        .btn:hover {
+            background: #337ecc;
+        }
+        .tip {
+            color: red;
+            font-size: 15px;
+            margin: 12px 0;
+            display: none;
+            text-align: center;
+        }
+        /* 所有内容界面默认隐藏 */
+        .download-wrap1,
+        .download-wrap2,
+        .download-wrap3 {
+            display: none;
+            text-align: center;
+        }
+        .download-wrap1 p,
+        .download-wrap2 p,
+        .download-wrap3 p {
+            font-size: 16px;
+            color: #666;
+            margin: 15px 0 25px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #67c23a;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background: #559f2e;
+        }
+        .reset-btn {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: #909399;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .reset-btn:hover {
+            background: #7b7d82;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 密码输入区域 -->
+        <div class="pwd-wrap" id="pwdWrap">
+            <h2>请输入获取文件密码</h2>
+            <p>对本页面有疑惑？</p>
+            <p>请加大佬QQ</p>
+            <p>3780504066</p>
+            <div class="input-item">
+                <input type="password" id="pwd" placeholder="请输入密码">
+            </div>
+            <p class="tip" id="tip">密码错误<br>小提示：密码需要加大佬QQ获取</p>
+            <button class="btn" onclick="checkPwd()">确认</button>
+        </div>
+
+        <!-- 密码1 对应界面 -->
+        <div class="download-wrap1" id="box1">
+            <h2>密码1正确 · 普通资源区</h2>
+            <p>使用说明</p>
+            <p>1. 本资源仅供学习使用</p>
+            <p>2. 下载后请妥善保存</p>
+            <a href="https://mmljc.github.io/vip/runme.bat" class="download-btn">下载普通文件</a>
+            <br>
+            <button class="reset-btn" onclick="resetPage()">返回密码页</button>
+        </div>
+
+        <!-- 密码2 对应界面 -->
+        <div class="download-wrap2" id="box2">
+            <h2>密码2正确 · 高级资源区</h2>
+            <p>专属高级用户界面</p>
+            <p>1. 高级文件仅限内部使用</p>
+            <p>2. 禁止二次传播</p>
+            <a href="https://mmljc.github.io/vip/daohang.html" class="download-btn">下载高级文件</a>
+            <br>
+            <button class="reset-btn" onclick="resetPage()">返回密码页</button>
+        </div>
+
+        <!-- 密码3 对应界面 -->
+        <div class="download-wrap3" id="box3">
+            <h2>密码3正确 · 管理员后台</h2>
+            <p>管理员专属入口</p>
+            <p>仅限管理员登录使用</p>
+            <a href="https://www.baidu.com" class="download-btn">进入管理员后台</a>
+            <br>
+            <button class="reset-btn" onclick="resetPage()">返回密码页</button>
+        </div>
+    </div>
+
+    <script>
+        // ========== 在这里设置 密码对应界面 ==========
+        // 格式：密码: 对应界面ID
+        const pwdList = {
+            "123456": "box1",   // 密码123456 → 界面1
+            "666888": "box2",   // 密码666888 → 界面2
+            "6604050873": "box3"// 原密码 → 界面3
+        };
+
+        // 校验密码
+        function checkPwd() {
+            let pwdVal = document.getElementById('pwd').value.trim();
+            let tip = document.getElementById('tip');
+            let pwdWrap = document.getElementById('pwdWrap');
+            
+            // 先隐藏所有内容界面
+            document.getElementById('box1').style.display = 'none';
+            document.getElementById('box2').style.display = 'none';
+            document.getElementById('box3').style.display = 'none';
+
+            // 判断密码是否存在
+            if(pwdList.hasOwnProperty(pwdVal)){
+                tip.style.display = 'none';
+                pwdWrap.style.display = 'none';
+                // 显示对应界面
+                document.getElementById(pwdList[pwdVal]).style.display = 'block';
+            }else{
+                tip.style.display = 'block';
+            }
+        }
+
+        // 返回密码页
+        function resetPage(){
+            location.reload();
+        }
+
+        // 页面初始化重置
+        window.onload = function(){
+            document.getElementById('pwd').value = '';
+            document.getElementById('tip').style.display = 'none';
+            document.getElementById('pwdWrap').style.display = 'block';
+            document.getElementById('box1').style.display = 'none';
+            document.getElementById('box2').style.display = 'none';
+            document.getElementById('box3').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
