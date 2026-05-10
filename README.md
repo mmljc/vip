@@ -1,3 +1,4 @@
+<head><link href="stylesheet.css" rel="stylesheet"></head>
 <a id="目录"></a>
 # 目录
 - [目录](#目录)
@@ -114,6 +115,11 @@ custom-btn:hover {
 }
 .button:hover {
     background-color: #0056b3;
+}
+.your-style {
+    font-family: 'DFPOP1W5-GB';
+    font-weight: normal;
+    font-style: normal;
 }
 </style>
 
