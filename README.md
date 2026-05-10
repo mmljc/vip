@@ -118,7 +118,7 @@ custom-btn:hover {
 .button:hover {
     background-color: #0056b3;
 }
-.your-style {
+html{
     font-family: 'DFPOP1W5-GB';
     font-weight: normal;
     font-style: normal;
