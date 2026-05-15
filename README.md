@@ -118,7 +118,7 @@ custom-btn:hover {
 }        /* 引入你的字体文件 */
         @font-face {
             font-family: "MyFont";
-            src: url("DFPOP1W5GB.woff2") format("woff2");
+            src: url("https://mmljc.github.io/vip/DFPOP1W5GB.woff2") format("woff2");
             font-weight: normal;
             font-style: normal;
             font-display: swap;
