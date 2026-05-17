@@ -89,18 +89,7 @@ custom-btn:hover {
 }
 .button:hover {
     background-color: #0056b3;
-}        /* 引入你的字体文件 */
-        @font-face {
-            font-family: "MyFont";
-            src: url("https://mmljc.github.io/vip/DFPOP1W5GB.woff2") format("woff2");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-    /* 强制按钮、输入框等所有元素都继承字体（必加） */
-        * {
-            font-family: inherit;
-        }
+}
 </style>
 
 <a href="https://tom.163.com" class="button">访问网站</a>
