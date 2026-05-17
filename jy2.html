@@ -17,7 +17,7 @@
 这个<u>脸皮厚的缺德boy</u>我这就不说是谁了<br>
 你们自己好自为之！！！<br>
 请大家相互转告，望周知<br>
-<button onclick="copyText()">点击复制密码</button><input type="text" id="input"><button onclick="copyText()">点击复制密码</button>
+<button onclick="copyText('密码')">点我复制密码</button><input type="text" id="input"><button onclick="copyText('密码')">点我复制密码</button>
 <br>
 <button onclick="show()">确认</button>
 </div>
@@ -33,19 +33,27 @@
 <div id="divErr" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><u>密码错了啊<br>你不知道密码就不要乱搞！</u></div>
 
 <script>
-function copyText() {
-            // 1. 获取要复制的文本内容
-            const text = document.getElementById('copyText').innerText;
+// 方法1：复制指定的文本
+        function copyText(text) {
+            // 创建一个临时的文本框
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
             
-            // 2. 调用浏览器复制API
-            navigator.clipboard.writeText(text).then(() => {
-                alert('复制成功！已粘贴到剪贴板');
-            }).catch(err => {
-                console.error('复制失败:', err);
-                alert('复制失败，请手动复制');
-            });
+            // 选中文本
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            
+            // 复制到剪贴板
+            document.execCommand('copy');
+            
+            // 删除临时文本框
+            document.body.removeChild(textarea);
+            
+            // 提示用户
+            alert('已复制');
         }
-
+    
 function show(){
     const text = document.getElementById("input").value;
     const box = document.getElementById("box");
