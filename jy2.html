@@ -2,220 +2,83 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神秘文件下载</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
-        body {
-            background: #f5f7fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        /* 放大白色盒子 */
-        .box {
-            width: 95%;
-            max-width: 600px;
-            padding: 60px 50px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 35px;
-            color: #333;
-            font-size: 24px;
-        }
-        .input-item {
-            margin-bottom: 25px;
-        }
-        input {
-            width: 100%;
-            height: 55px;
-            padding: 0 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 17px;
-            outline: none;
-            transition: 0.3s;
-        }
-        input:focus {
-            border-color: #409eff;
-        }
-        .btn {
-            width: 100%;
-            height: 55px;
-            background: #409eff;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 17px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top:10px;
-        }
-        .btn:hover {
-            background: #337ecc;
-        }
-        .tip {
-            color: red;
-            font-size: 15px;
-            margin: 12px 0;
-            display: none;
-            text-align: center;
-        }
-        /* 所有内容界面默认隐藏 */
-        .download-wrap1,
-        .download-wrap2,
-        .download-wrap3 {
-            display: none;
-            text-align: center;
-        }
-        .download-wrap1 p,
-        .download-wrap2 p,
-        .download-wrap3 p {
-            font-size: 16px;
-            color: #666;
-            margin: 15px 0 25px;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #67c23a;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 17px;
-            transition: 0.3s;
-        }
-        .download-btn:hover {
-            background: #559f2e;
-        }
-        .reset-btn {
-            margin-top: 25px;
-            padding: 12px 30px;
-            background: #909399;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .reset-btn:hover {
-            background: #7b7d82;
-        }
-    </style>
-</head>
-<body>
-    <div class="box">
-        <!-- 密码输入区域 -->
-        <div class="pwd-wrap" id="pwdWrap">
-            <h2>请输入获取文件密码</h2>
-            <p>对本页面有疑惑？</p>
-            <p>请加大佬QQ</p>
-            <p>3780504066</p>
-            <div class="input-item">
-                <input type="password" id="pwd" placeholder="请输入密码">
-            </div>
-            <p class="tip" id="tip">密码错误<br>小提示：密码需要加大佬QQ获取</p>
-            <button class="btn" onclick="checkPwd()">确认</button>
-        </div>
+    <title>下载</title>
+<head>
+<body style="text-align:center;">
+<div id="box">
+<h1>温馨提示<h1>
+<h3>输入密码才能下载文件哦</h3>
+对了，忘记说了<br>
+<strong><u><mark>这里改密码了！</mark></u></strong><br><br>
+为什么要改呢？<br>
+因为有缺德boy把我弄生气了😡<br>
+缺德boy:<q>你这完全是骗人的，我就完全不用这个</q><br>
+<u>可他实际上刷视频刷得很爽！！！</u><br>
+这个<u>脸皮厚的缺德boy</u>我这就不说是谁了<br>
+你们自己好自为之！！！<br>
+请大家相互转告，望周知<br>
+<button onclick="copyText()">点击复制密码</button><input type="text" id="input"><button onclick="copyText()">点击复制密码</button>
+<br>
+<button onclick="show()">确认</button>
+</div>
 
-        <!-- 密码1 对应界面 -->
-        <div class="download-wrap1" id="box1">
-            <h2>恭喜你，密码正确</h2>
-            <P>使用说明</P>
-                
-<p>用户在使用本网站的服务时，必须遵守以下规则</P>
-    
-<P>1.用户使用本网站的服务，一切的行为后果均为用户自负，本网站只提供文件服务，不承认担任何责任！</P>
-    
-<P>2.下载的文件必须要在没有网络后才能运行，否则无法达到破网的效果！</P>
+<br><br>
+<div id="divA" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>欢迎各位来我们的QQ群玩</h1><br><img src="https://mmljc.github.io/vip/qq.jpg" alt="QQ群号：1077240655"></div>
+<div id="divB" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">输我的QQ号干嘛？<br>我的QQ号不是密码啊！<br>（输入我的QQ号却又不加我的屑）</div>
+<div id="divC" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">你把我的QQ号倒过来干嘛？<br>（何意味？）</div>
+<div id="divD" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>猫和老鼠好好玩啊</h1> <br>-<img src="https://github.com/user-attachments/assets/1afbc83e-c3eb-413f-9e46-7573e7612df9" alt="猫和老鼠"> </div>
+<div id="divE" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">代码还没有写完呢。。。</div>
+<div id="divF" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>密码正确</h1><br><a href="https://mmljc.github.io/vip/runme.bat"><button>点我下载文件</button></a></div>
+<div id="divG" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>文件无法下载？</h1><strong><u>请按照下面方法操作</strong></u><br><br>准备的步骤：<br>>在桌面点鼠标右键，选择新建，点击文本文档<br>>打开新建的文档，将现在显示的内容复制到文档内，以免找不到<br><br>1.右键桌面上左下角的开始键(就是windous的那个标)，选择运行<br>2.在运行框里面输入cmd，点确定<br>3.将下面的内容复制一下(从taskkill开始，STUDSRV结束)<br><br>taskkill /f /im GATESRV.exe /t<br>taskkill /f /im MasterHelper.exe /t<br>Sc stop tdnetfilter<br>sc stop STUDSRV<br><br>4.在黑色的框里面右键一下，再点回车<br><strong>(看懂了才用)</strong></div>
+<div id="divErr" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><u>密码错了啊<br>你不知道密码就不要乱搞！</u></div>
 
-<P>3.文件必须在有网络的情况下下载，否则无法使用</P>
-    
-<P>4.下载的文件可以在下载文件夹中找到</P>
-            <p>点击下载按钮下载文件</p>
-            <a href="https://mmljc.github.io/vip/runme.bat" class="download-btn">下载文件</a>
-            <!-- 手动重置返回密码页按钮 -->
-            <button class="reset-btn" onclick="resetPage()">返回密码页</button>
-            <a href="https://mmljc.github.io/vip/daohang.html"
-   class="btn"
-   role="button"
-   tabindex="0"
-   aria-label="前往导航页">点我前往导航页</a>
-        </div>
-
-        <!-- 密码2 对应界面 -->
-        <div class="download-wrap2" id="box2">
-            <h2>测试页面</h2>
-            <br>
-            <a href="https://mmljc.github.io/vip/qq.jpg" class="download-btn">加入群聊</a>
-            <button class="reset-btn" onclick="resetPage()">返回密码页</button>
-        </div>
-
-        <!-- 密码3 对应界面 -->
-        <div class="download-wrap3" id="box3">
-            <p>别看了，这里啥也没有</p>
+<script>
+function copyText() {
+            // 1. 获取要复制的文本内容
+            const text = document.getElementById('copyText').innerText;
             
-            // <a href="https://www.baidu.com" class="download-btn">进入百度</a>
-            // <br>
-            // <button class="reset-btn" onclick="resetPage()">返回密码页</button>
-        </div>
-    </div>
-
-    <script>
-        // ========== 在这里设置 密码对应界面 ==========
-        // 格式：密码: 对应界面ID
-        const pwdList = {
-            "6604050873": "box1",   // 密码123456 → 界面1
-            "QQ": "box2",   // 密码666888 → 界面2
-            "3780504066": "box3"// 原密码 → 界面3
-        };
-
-        // 校验密码
-        function checkPwd() {
-            let pwdVal = document.getElementById('pwd').value.trim();
-            let tip = document.getElementById('tip');
-            let pwdWrap = document.getElementById('pwdWrap');
-            
-            // 先隐藏所有内容界面
-            document.getElementById('box1').style.display = 'none';
-            document.getElementById('box2').style.display = 'none';
-            document.getElementById('box3').style.display = 'none';
-
-            // 判断密码是否存在
-            if(pwdList.hasOwnProperty(pwdVal)){
-                tip.style.display = 'none';
-                pwdWrap.style.display = 'none';
-                // 显示对应界面
-                document.getElementById(pwdList[pwdVal]).style.display = 'block';
-            }else{
-                tip.style.display = 'block';
-            }
+            // 2. 调用浏览器复制API
+            navigator.clipboard.writeText(text).then(() => {
+                alert('复制成功！已粘贴到剪贴板');
+            }).catch(err => {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制');
+            });
         }
 
-        // 返回密码页
-        function resetPage(){
-            location.reload();
-        }
+function show(){
+    const text = document.getElementById("input").value;
+    const box = document.getElementById("box");
+    // 所有内容容器
+    const containers = [divA, divB, divC, divD, divE, divF, divG, divErr];
 
-        // 页面初始化重置
-        window.onload = function(){
-            document.getElementById('pwd').value = '';
-            document.getElementById('tip').style.display = 'none';
-            document.getElementById('pwdWrap').style.display = 'block';
-            document.getElementById('box1').style.display = 'none';
-            document.getElementById('box2').style.display = 'none';
-            document.getElementById('box3').style.display = 'none';
-        }
-    </script>
+    // 统一隐藏所有容器 + 重置动画
+    containers.forEach(el => {
+        el.style.display = "none";
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+    });
+
+    let target;
+    switch(text) {
+        case "QQ": target = divA; box.style.display = "none"; break;
+        case "3780504066": target = divB; box.style.display = "none"; break;
+        case "6604050873": target = divC; box.style.display = "none"; break;
+        case "猫和老鼠": target = divD; box.style.display = "none"; break;
+        case "123": target = divE; box.style.display = "none"; break;
+        case "234876734": target = divF; box.style.display = "none"; break;
+        case "紧急情况": target = divG; box.style.display = "none"; break;
+        default: target = divErr;
+    }
+
+    // 显示目标容器并触发动画
+    target.style.display = "block";
+    setTimeout(() => {
+        target.style.opacity = 1;
+        target.style.transform = "translateY(0)";
+    }, 10);
+}
+</script>
+
 </body>
 </html>
