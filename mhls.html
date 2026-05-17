@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>猫和老鼠</title>
+</head>
 <body>
-<h1>快来和大佬玩猫和老鼠</h1>
+    <h1>快来和大佬玩猫和老鼠</h1>
+    <!-- 方法2：复制某个元素的内容 -->
+    <p>我的id是:</p>
+    <p id="textToCopy">234876734</p>
+    <button onclick="copyElement('textToCopy')">复制id</button>
+    
+    <img width="960" height="720" alt="Image_1777816119861_551" 
+         src="https://github.com/user-attachments/assets/1afbc83e-c3eb-413f-9e46-7573e7612df9" />
 
-
-
-<img width="960" height="720" alt="Image_1777816119861_551" src="https://github.com/user-attachments/assets/1afbc83e-c3eb-413f-9e46-7573e7612df9" />
+    <script>
+        // 方法1：复制指定的文本
+        function copyText(text) {
+            // 创建一个临时的文本框
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            
+            // 选中文本
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            
+            // 复制到剪贴板
+            document.execCommand('copy');
+            
+            // 删除临时文本框
+            document.body.removeChild(textarea);
+            
+            // 提示用户
+            alert('已复制：' + text);
+        }
+        
+        // 方法2：复制元素的内容
+        function copyElement(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            copyText(text);
+        }
+    </script>
 </body>
 </html>
-
-
-
