@@ -2,39 +2,98 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神秘文件下载</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
+    <title>下载</title>
+<style>
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('https://mmljc.github.io/vip/DFPOP1W5GB.woff2') format('woff2'),
+         url('https://mmljc.github.io/vip/DFPOP1W5GB.woff') format('woff'); /* 提供WOFF格式作为备用 */
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'MyCustomFont', sans-serif; /* 使用自定义字体，如果不可用则回退到sans-serif */
+}
+</style>
+<head>
+<body style="text-align:center;">
+<div id="box">
+<h1>温馨提示<h1>
+<h3>输入密码才能下载文件哦</h3>
+对了，忘记说了<br>
+<strong><u><mark>这里改密码了！</mark></u></strong><br><br>
+为什么要改呢？<br>
+因为有缺德boy把我弄生气了😡<br>
+缺德boy:<q>你这完全是骗人的，我就完全不用这个</q><br>
+<u>可他实际上刷视频刷得很爽！！！</u><br>
+这个<u>脸皮厚的缺德boy</u>我这就不说是谁了<br>
+你们自己好自为之！！！<br>
+请大家相互转告，望周知<br>
+<button onclick="copyText()">点击复制密码</button><input type="text" id="input"><button onclick="copyText()">点击复制密码</button>
+<br>
+<button onclick="show()">确认</button>
+</div>
+
+<br><br>
+<div id="divA" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>欢迎各位来我们的QQ群玩</h1><br><img src="https://mmljc.github.io/vip/qq.jpg" alt="QQ群号：1077240655"></div>
+<div id="divB" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">输我的QQ号干嘛？<br>我的QQ号不是密码啊！<br>（输入我的QQ号却又不加我的屑）</div>
+<div id="divC" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">你把我的QQ号倒过来干嘛？<br>（何意味？）</div>
+<div id="divD" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>猫和老鼠好好玩啊</h1> <br>-<img src="https://github.com/user-attachments/assets/1afbc83e-c3eb-413f-9e46-7573e7612df9" alt="猫和老鼠"> </div>
+<div id="divE" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;">代码还没有写完呢。。。</div>
+<div id="divF" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>密码正确</h1><br><a href="https://mmljc.github.io/vip/runme.bat"><button>点我下载文件</button></a></div>
+<div id="divG" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><h1>文件无法下载？</h1><strong><u>请按照下面方法操作</strong></u><br><br>准备的步骤：<br>>在桌面点鼠标右键，选择新建，点击文本文档<br>>打开新建的文档，将现在显示的内容复制到文档内，以免找不到<br><br>1.右键桌面上左下角的开始键(就是windous的那个标)，选择运行<br>2.在运行框里面输入cmd，点确定<br>3.将下面的内容复制一下(从taskkill开始，STUDSRV结束)<br><br>taskkill /f /im GATESRV.exe /t<br>taskkill /f /im MasterHelper.exe /t<br>Sc stop tdnetfilter<br>sc stop STUDSRV<br><br>4.在黑色的框里面右键一下，再点回车<br><strong>(看懂了才用)</strong></div>
+<div id="divErr" style="transform: translateY(20px);opacity:0;transition:all 0.5s;display:none;"><u>密码错了啊<br>你不知道密码就不要乱搞！</u></div>
+
+<script>
+function copyText() {
+            // 1. 获取要复制的文本内容
+            const text = document.getElementById('copyText').innerText;
+            
+            // 2. 调用浏览器复制API
+            navigator.clipboard.writeText(text).then(() => {
+                alert('复制成功！已粘贴到剪贴板');
+            }).catch(err => {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制');
+            });
         }
-        body {
-            background: #f5f7fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        /* 放大白色盒子 */
-        .box {
-            width: 95%;
-            max-width: 600px;
-            padding: 60px 50px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 35px;
-            color: #333;
-            font-size: 24px;
-        }
-        .input-item {
-            margin-bottom: 25px;
+
+function show(){
+    const text = document.getElementById("input").value;
+    const box = document.getElementById("box");
+    // 所有内容容器
+    const containers = [divA, divB, divC, divD, divE, divF, divG, divErr];
+
+    // 统一隐藏所有容器 + 重置动画
+    containers.forEach(el => {
+        el.style.display = "none";
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+    });
+
+    let target;
+    switch(text) {
+        case "QQ": target = divA; box.style.display = "none"; break;
+        case "3780504066": target = divB; box.style.display = "none"; break;
+        case "6604050873": target = divC; box.style.display = "none"; break;
+        case "猫和老鼠": target = divD; box.style.display = "none"; break;
+        case "123": target = divE; box.style.display = "none"; break;
+        case "234876734": target = divF; box.style.display = "none"; break;
+        case "紧急情况": target = divG; box.style.display = "none"; break;
+        default: target = divErr;
+    }
+
+    // 显示目标容器并触发动画
+    target.style.display = "block";
+    setTimeout(() => {
+        target.style.opacity = 1;
+        target.style.transform = "translateY(0)";
+    }, 10);
+}
+</script>
+
+</body>
+</html>            margin-bottom: 25px;
         }
         input {
             width: 100%;
