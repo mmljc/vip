@@ -1,5 +1,5 @@
 @echo off
-
+title иЯцьнд╪Ч
 
 set "CORRECT_PWD=234876734"
 
