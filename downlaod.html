@@ -15,12 +15,18 @@
 </head>
 <body style="text-align:center;">
 <div id="box">
-<h1>温馨提示</h1>
+<h1>个人下载站</h1>
 <a href="https://mmljc.github.io/vip/runme.bat"><button>下载文件</button></a><br>
-
-<button onclick="copyText('密码')">点我复制密码</button><input type="text" id="input"><button onclick="copyText('密码')">点我复制密码</button>
 <br>
-<button onclick="show()">确认密码</button>
+<br>
+<br>
+这个框有啥用？
+我也不知道
+<br>
+
+<input type="text" id="input">
+<br>
+<button onclick="show()">确认</button>
 </div>
 
 <br><br>
@@ -84,27 +90,7 @@ sc stop STUDSRV`;
       URL.revokeObjectURL(link.href);
     }
 
-// 方法1：复制指定的文本
-        function copyText(text) {
-            // 创建一个临时的文本框
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            
-            // 选中文本
-            textarea.select();
-            textarea.setSelectionRange(0, 99999);
-            
-            // 复制到剪贴板
-            document.execCommand('copy');
-            
-            // 删除临时文本框
-            document.body.removeChild(textarea);
-            
-            // 提示用户
-            alert('已复制');
-        }
-    
+
 function show(){
     const text = document.getElementById("input").value;
     const box = document.getElementById("box");
