@@ -1,13 +1,115 @@
-<!DOCTYPE HTML>
-<HTML 很长="zh-CN">
-<头部>
-    <元文化 字符集="UTF-8">
-    <标题>安全提醒</标题>
-</头部>
-<身体 风格="文本对齐：中心;">
-<H1>安全提醒</H1>
-你将要访问下载页面<BR>
-<u>使用本页面的服务所造成的后果自负，本网站开发人员不承担任何责任</u><BR>
-<a href="https://mmljc.github.io/vip/jy.html"><按钮>高速访问链接</按钮></a> <a href="https://mmljc.github.io/vip/jy2.html"><按钮>备用访问链接（低速）</按钮></a> <a href="https://mmljc.github.io/vip/"><按钮>返回上一页</按钮></a>
-</身体>
-</HTML>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>安全提示</title> 
+<style>
+.button2 {
+    position: relative;
+    background-color: #f4511e;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button2:after {
+    content: "";
+    background: #FF0303;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button2:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.button3 {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  width: 200px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #CCC;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button3:hover {background-color: #AAA}
+
+.button3:active {
+  background-color: #AAA;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body style="text-align:center;">
+<h1>安全提醒</h1>
+你将要访问下载页面<br>
+<u>使用本页面的服务所造成的后果自负，本网站开发人员不承担任何责任</u><br>
+<a href="https://mmljc.github.io/vip/downlaod.html"><button class="button" style="vertical-align:middle"><span>高速访问链接 </span></button></a><br><a href="https://mmljc.github.io/vip/downlaod2.html"><button class="button2">备用访问链接（低速）</button></a> <br><a href="https://mmljc.github.io/vip/"><button class="button3">返回上一页</button></a>
+</body>
+</html>
