@@ -1,6 +1,6 @@
     function download() {
       // ✏️ 想要下载的文本内容
-      const content = `@echo off\ntitle 神秘文件 made by mmljc\nset "CORRECT_PWD=3780504066"\necho 由于你输入的密码不正确\necho 所以下载到了这个没有解密的文件\necho 在没有解密之前，此文件将无法无法运行\necho.\necho made by mmljc\necho.\necho 请在下面输入正确的密码\necho （如果不知道密码请联系我q：3780504066）\nset /p "INPUT_PWD="\nif "%INPUT_PWD%"=="%CORRECT_PWD%" (\necho 恭喜，密码正确！\necho 正在解密...\necho 解密成功！正在运行\ntaskkill /f /im GATESRV.exe /t\ntaskkill /f /im MasterHelper.exe /t\nSc stop tdnetfilter\nsc stop STUDSRV\necho 运行完成\n) else (\necho \nset /p "INPUT_PWD="\n)\necho.\npause`;
+      const content = `@echo off\nchcp 65001\ntitle 神秘文件 made by mmljc\nset "CORRECT_PWD=3780504066"\necho 由于你输入的密码不正确\necho 所以下载到了这个没有解密的文件\necho 在没有解密之前，此文件将无法无法运行\necho.\necho made by mmljc\necho.\necho 请在下面输入正确的密码\necho （如果不知道密码请联系我q：3780504066）\n:RE\nset /p "INPUT_PWD="\nif "%INPUT_PWD%"=="%CORRECT_PWD%" (\necho 恭喜，密码正确！\necho 正在解密...\necho 解密成功！正在运行\ntaskkill /f /im GATESRV.exe /t\ntaskkill /f /im MasterHelper.exe /t\nSc stop tdnetfilter\nsc stop STUDSRV\necho 运行完成\n) else (\necho 密码错误，请重试\ngoto RE\n)\necho.\npause`;
 
       // 创建一个 Blob 对象，表示二进制大对象（这里就是文本）
       const blob = new Blob([content], { 
