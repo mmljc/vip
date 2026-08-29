@@ -6,10 +6,32 @@
     }
 
 button {
-		border-radius: 4px;
 		cursor: url('https://mmljc.ccwu.cc/hand.cur') 16 16, pointer;
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #0056b3;
+}
+
+.custom-btn {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+custom-btn:hover {
+   background-color: #45a049;
+}
 .top {
   text-align:center;
 }
@@ -36,9 +58,8 @@ body {
 
     margin: 0;
 }
-hr {
-	color: #ccc;
-}
+
+hr {color: #333 !important;}
 
 /* 标题 */
 .header {
@@ -170,15 +191,59 @@ hr {
 
 .am-popup{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1110;background:#fff;display:none;overflow:hidden;-webkit-transition-property:-webkit-transform;transition-property:transform;-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}.am-popup.am-modal-active,.am-popup.am-modal-out{-webkit-transition-duration:300ms;transition-duration:300ms}.am-popup.am-modal-active{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.am-popup.am-modal-out{-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}@media all and (min-width:630px) and (min-height:630px){.am-popup{width:630px;height:630px;left:50%;top:50%;margin-left:-315px;margin-top:-315px;-webkit-transform:translateY(1024px);-ms-transform:translateY(1024px);transform:translateY(1024px)}.am-popup.am-modal-active{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.am-popup.am-modal-out{-webkit-transform:translateY(1024px);-ms-transform:translateY(1024px);transform:translateY(1024px)}}.am-popup-inner{padding-top:44px;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.am-popup-hd{position:fixed;top:0;width:100%;height:43px;border-bottom:1px solid #dedede;background-color:#fff}.am-popup-hd .am-popup-title{font-size:1.8rem;font-weight:700;line-height:43px;text-align:center;margin:0 30px;color:#333;display:block;word-wrap:normal;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.am-popup-hd .am-close{position:absolute;right:10px;top:8px;cursor:pointer;-webkit-transition:all .3s;transition:all .3s;color:#999}.am-popup-hd .am-close:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);color:#555}.am-popup-bd{padding:15px;background:#f8f8f8;color:#555}
 /* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
-@media screen and (max-width: 900px) {
-    .box {   
-        flex-direction: column;
+.dl {
+   display: flex;
+	justify-content:space-around;
+	flex-wrap: wrap;
+	}
+
+/* ============================================================
+   平板及以下（768px）
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+    /* --- 三列卡片强制变单列（覆盖 Tailwind grid） --- */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    /* --- 表格横向滚动 --- */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* 隐藏分隔符按钮 | */
+    .nav {
+        display:none !important;
     }
 }
-/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
-@media screen and (max-width: 400px) {
+
+/* ============================================================
+   手机（480px 及以下）
+   ============================================================ */
+@media screen and (max-width: 480px) {
+
+    /* 导航按钮纵向排列 */
     .navbar button {
-        float: none;
+        float: none !important;
         width: 100%;
+        text-align: left;
+        padding: 14px 20px;
+        border-bottom: 1px solid #444;
+    }
+
+    .header {
+        padding: 30px 16px !important;
+    }
+    .header h1 {
+        font-size: 22px !important;
+    }
+
+    .footer {
+        padding: 16px;
+        font-size: 0.85rem;
     }
 }
