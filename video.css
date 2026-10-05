@@ -1,0 +1,181 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DFPOP1W5GB';
+        }
+
+        @font-face {
+            font-family: 'DFPOP1W5GB';
+            src: url('DFPOP1W5GB.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+body {
+    cursor: url('https://mmljc.ccwu.cc/arrow.cur') 16 16, auto;
+
+    margin: 0;
+}
+    /* 链接悬停 */
+    a {
+      /* 修正：var() 改为 url() */
+      cursor: url('https://mmljc.ccwu.cc/hand.cur') 16 16, pointer;
+      color: #4fc3f7;
+    }
+
+    /* 按钮悬停 */
+    button {
+      /* 修正：var() 改为 url() */
+      cursor: url('https://mmljc.ccwu.cc/hand.cur') 16 16, pointer;
+      padding: 10px 20px;
+      background: #4fc3f7;
+      border: none;
+      border-radius: 4px;
+      color: #1a1a1a;
+      font-size: 16px;
+    }
+
+        /* 视频背景 */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* 内容容器 */
+        .content-box {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 320px;
+            max-width: 90vw;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+        /* 滚动条样式 */
+        .content-box::-webkit-scrollbar {
+            width: 6px;
+        }
+        .content-box::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+        .content-box::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+        .content-box::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* --- 优化开始：输入框样式 --- */
+        #input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #input:focus {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.02);
+        }
+        /* --- 优化结束 --- */
+
+        /* --- 优化开始：按钮样式 --- */
+        button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            font-family: inherit;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.35);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        /* --- 优化结束 --- */
+
+        /* 修复：为动画添加了时间单位 's' */
+        .fade-in-up {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s ease-out;
+        }
+        
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .content-box {
+                right: 20px;
+                left: 20px;
+                width: auto;
+                padding: 30px 20px;
+            }
+        }
