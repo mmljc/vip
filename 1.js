@@ -1,3 +1,6 @@
+function download(){
+	alert("你的下载即将开始\n请不要重复点击");
+}
         const items = document.querySelectorAll(".item");
         const btns = document.querySelectorAll("[data-t]");
 
